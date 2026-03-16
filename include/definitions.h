@@ -1,7 +1,7 @@
 #ifndef DEFINITIONS_H
 #define DEFINITIONS_H
 
-#define AP_SSID "A15-BL1320"
+#define AP_SSID "A15-bl547"      // всё ещё используется в start_deauth
 #define AP_PASS "Adam1234*"
 #define LED 2
 #define SERIAL_DEBUG
@@ -9,6 +9,7 @@
 #define NUM_FRAMES_PER_DEAUTH 16
 #define DEAUTH_BLINK_TIMES 2
 #define DEAUTH_BLINK_DURATION 20
+
 #define DEAUTH_TYPE_SINGLE 0
 #define DEAUTH_TYPE_ALL 1
 
@@ -17,15 +18,16 @@
 #define DEBUG_PRINTLN(...) Serial.println(__VA_ARGS__)
 #define DEBUG_PRINTF(...) Serial.printf(__VA_ARGS__)
 #endif
+
 #ifndef SERIAL_DEBUG
 #define DEBUG_PRINT(...)
 #define DEBUG_PRINTLN(...)
 #define DEBUG_PRINTF(...)
 #endif
+
 #ifdef LED
 #define BLINK_LED(num_times, blink_duration) blink_led(num_times, blink_duration)
-#endif
-#ifndef LED
+#else
 #define BLINK_LED()
 #endif
 
